@@ -33,6 +33,18 @@ body {
     width: 110px;
 }
 
+.img-container:after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
 .img-container img {
     background-size: cover;
     border-radius: 50%;
@@ -83,4 +95,44 @@ body {
 
 .action-btn:focus {
     outline: none;
+}
+
+.music-info {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 15px 15px 0 0;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    opacity: 0;
+    width: calc(100% - 40px);
+    padding: 10px 10px 10px 150px;
+    transform: translateY(0%);
+    transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+    z-index: 0;
+}
+
+.music-container.play .music-info {
+    opacity: 1;
+    transform: translateY(-100%);
+}
+
+.music-info h4 {
+    margin: 0;
+}
+
+.progress-container {
+    border-radius: 5px;
+    background: #fff;
+    cursor: pointer;
+    margin: 10px 0;
+    height: 4px;
+    width: 100%;
+}
+
+.progress {
+    border-radius: 5px;
+    height: 100%;
+    width: 0%;
+    background-color: #fe8daa;
+    transition: width 0.1s linear;
 }
